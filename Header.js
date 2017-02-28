@@ -13,6 +13,8 @@ const Header = ({ title }) => {
   );
 };
 
+export { Header };
+
 const styles = {
   header: {
     justifyContent: 'center',
@@ -31,5 +33,3 @@ const styles = {
     fontWeight: 'bold'
   }
 }
-
-export { Header };
