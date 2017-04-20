@@ -5,26 +5,22 @@ const width = Dimensions.get('window').width;
 const buttonWidth = (width * 0.8);
 
 const Button = ({ onPress, style, children }) => {
+  let styleMarker = '';
   switch (style) {
     case 'cancel':
-      return (
-        <TouchableOpacity
-          onPress={onPress}
-          style={styles.cancelButton}
-        >
-          {children}
-        </TouchableOpacity>
-      );
+      styleMarker = styles.cancelButton;
+      break;
     default:
-      return (
-        <TouchableOpacity
-          onPress={onPress}
-          style={styles.primaryButton}
-        >
-          {children}
-        </TouchableOpacity>
-      );
+      styleMarker = styles.primaryButton;
   }
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      style={styleMarker}
+    >
+      {children}
+    </TouchableOpacity>
+  );
 };
 
 export { Button };
